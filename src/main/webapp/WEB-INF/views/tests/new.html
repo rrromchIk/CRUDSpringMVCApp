@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SpringWebApp</title>
+</head>
+<body>
+    <h2>Adding test</h2>
+    <a href="/">Home</a>
+    <form th:method="POST" th:action="@{/tests}" th:object="${test}">
+        <label for="name">Test name</label>
+        <input type="text" th:field="*{name}" id="name">
+        <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+
+        <br>
+
+        <label for="subject">Subject</label>
+        <input type="text" th:field="*{subject}" id="subject">
+        <div style="color:red" th:if="${#fields.hasErrors('subject')}" th:errors="*{subject}">Subject error</div>
+
+        <br>
+
+        <label for="duration">Duration</label>
+        <input type="number" th:field="*{duration}" id="duration">
+        <div style="color:red" th:if="${#fields.hasErrors('duration')}" th:errors="*{duration}">Duration error</div>
+
+        <br>
+
+        <label for="numOfQuest">Number of questions</label>
+        <input type="number" th:field="*{numberOfQuestions}" id="numOfQuest">
+        <div style="color:red" th:if="${#fields.hasErrors('numberOfQuestions')}" th:errors="*{numberOfQuestions}">Name error</div>
+
+        <br>
+
+        <input type="submit" value="Add test">
+    </form>
+
+</body>
+</html>

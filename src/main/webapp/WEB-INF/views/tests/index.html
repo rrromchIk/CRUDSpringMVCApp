@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SpringWebApp</title>
+</head>
+<body>
+    <h2>All tests</h2>
+    <a href="/">Go to home</a>
+    <div th:each="test : ${tests}">
+        <h2 th:text="${test.toString()}">test</h2>
+        <a th:href="@{/tests/{id}/edit(id=${test.getId()})}">Edit</a>
+        <form th:method="DELETE" th:action="@{tests/{id}(id=${test.getId()})}">
+            <input type="submit" value="Delete">
+        </form>
+    </div>
+    <br><br>
+</body>
+</html>
