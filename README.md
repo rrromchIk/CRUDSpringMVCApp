@@ -1,4 +1,4 @@
-# CRUDSpringMVCApp
+# CRUD SpringMVC App
 
 Simple WebApp based on spring-framework, using 
 - SpringMVC, 
