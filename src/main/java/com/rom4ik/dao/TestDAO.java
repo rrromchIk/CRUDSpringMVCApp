@@ -28,6 +28,11 @@ public class TestDAO {
                 .stream().findAny().orElse(null);
     }
 
+    public Test getByName(String name) {
+        return jdbcTemplate.query("SELECT * FROM test WHERE name=?", new Object[]{name}, new BeanPropertyRowMapper<>(Test.class))
+                .stream().findAny().orElse(null);
+    }
+
     public void addTest(Test test) {
         jdbcTemplate.update("INSERT INTO test(name, subject, duration, numberOfQuestions)" +
                         " VALUES(?, ?, ?, ?)",
